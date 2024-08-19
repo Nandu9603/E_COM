@@ -1,0 +1,107 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<div style="background-color: white;">
+    <div class="container mb-5">
+        <!-- Carousel Section -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/banner/b1.jpg' %}" class="d-block w-100" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/banner/b2.jpg' %}" class="d-block w-100" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/banner/b3.jpg' %}" class="d-block w-100" alt="Banner 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/banner/b4.jpg' %}" class="d-block w-100" alt="Banner 4">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Product Section -->
+        <div class="row mb-4">
+            <div class="col-md-4 text-center mb-4">
+                <div class="product-card p-3">
+                    <a href="#" class="product-link d-block">
+                        <img src="{% static 'images/curd-premium.png' %}" alt="Curd" class="img-fluid rounded shadow-sm mb-2">
+                        <h5>Curd</h5>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="product-card p-3">
+                    <a href="#" class="product-link d-block">
+                        <img src="{% static 'images/cow-milk.png' %}" alt="Milk" class="img-fluid rounded shadow-sm mb-2">
+                        <h5>Milk</h5>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="product-card p-3">
+                    <a href="#" class="product-link d-block">
+                        <img src="{% static 'images/cow-ghee.png' %}" alt="Ghee" class="img-fluid rounded shadow-sm mb-2">
+                        <h5>Ghee</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-4 text-center mb-4">
+              <div class="product-card p-3">
+                  <a href="#" class="product-link d-block">
+                      <img src="{% static 'images/curd-premium.png' %}" alt="Curd" class="img-fluid rounded shadow-sm mb-2">
+                      <h5>Curd</h5>
+                  </a>
+              </div>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+              <div class="product-card p-3">
+                  <a href="#" class="product-link d-block">
+                      <img src="{% static 'images/cow-milk.png' %}" alt="Milk" class="img-fluid rounded shadow-sm mb-2">
+                      <h5>Milk</h5>
+                  </a>
+              </div>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+              <div class="product-card p-3">
+                  <a href="#" class="product-link d-block">
+                      <img src="{% static 'images/cow-ghee.png' %}" alt="Ghee" class="img-fluid rounded shadow-sm mb-2">
+                      <h5>Ghee</h5>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<style>
+    .product-card {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .product-link img {
+        transition: transform 0.3s ease;
+    }
+    .product-link:hover img {
+        transform: scale(1.05);
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Category{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+        <!-- Sidebar with product titles -->
+        
+        
+        <!-- Main content with products -->
+        <div class="col-sm-9">
+            <div class="row">
+                {% for i in product %}
+                <div class="col-md-6 text-center mb-4">
+                    <a href="/product_details/{{ i.pk }}" class="btn text-decoration-none">
+                        <div class="card shadow-sm border rounded-3 p-3 h-100">
+                            <img src="{{ i.product_image.url }}" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="{{ i.title }}"/>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-danger">
+                                    Rs. {{ i.discounted_price }}/- 
+                                    <small class="text-muted text-decoration-line-through">{{ i.selling_price }}</small>
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

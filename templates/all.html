@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Category{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+        {% for i in pro %}
+        <div class="col-md-4 col-sm-6 text-center mb-4">
+            <a href="/product_details/{{ i.pk }}" class="btn btn-light shadow-sm border rounded-3 p-3 h-100 d-flex flex-column align-items-center justify-content-between" style="height: 100%;">
+                <img src="{{ i.product_image.url }}" class="img-fluid mb-3" style="width: 100%; max-height: 200px; object-fit: cover;"/>
+                <div class="fw-bold text-danger">
+                    Rs. {{ i.discounted_price }}/- 
+                    <small class="fw-light text-muted text-decoration-line-through">{{ i.selling_price }}</small>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
